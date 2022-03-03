@@ -7,7 +7,7 @@ function Solution({ info }) {
 
       {/* Step 1 */}
       <p>
-        <b>Step 4️⃣:</b> Determine the total frequency{" "}
+        <b>Step 1:</b> Determine the total frequency{" "}
         <b>
           <i>Σf</i>
         </b>
@@ -46,7 +46,7 @@ function Solution({ info }) {
           ))}
           <tr>
             <td></td>
-            <td style={{ backgroundColor: "pink" }}>
+            <td style={{ backgroundColor: "lightgreen" }}>
               <b>
                 {" "}
                 <i>Σf=</i>
@@ -59,12 +59,12 @@ function Solution({ info }) {
 
       {/* Step 2 */}
       <p>
-        <b>Step 1️⃣:</b> Find the Class Mark{" "}
+        <b>Step 2:</b> Find the Class Mark{" "}
         <b>
           <i>X</i>
         </b>{" "}
-        of each class. This can be done by finding the mean of the Lower and
-        Upper Limits for a particular class.
+        of each class by computing the mean of the Lower and Upper Limits of the
+        class.
       </p>
       <Table
         striped
@@ -79,7 +79,7 @@ function Solution({ info }) {
             <th>
               Frequency <i>f</i>
             </th>
-            <th style={{ backgroundColor: "pink" }}>
+            <th style={{ backgroundColor: "lightgreen" }}>
               Class Mark{" "}
               <b>
                 <i>X</i>
@@ -95,7 +95,7 @@ function Solution({ info }) {
                 {row.lowerLimit} - {row.upperLimit}{" "}
               </td>
               <td>{row.frequency}</td>
-              <td style={{ backgroundColor: "pink" }}>{row.classMark}</td>
+              <td style={{ backgroundColor: "lightgreen" }}>{row.classMark}</td>
             </tr>
           ))}
           <tr>
@@ -115,7 +115,7 @@ function Solution({ info }) {
 
       {/* Step 3 */}
       <p>
-        <b>Step 2️⃣:</b> For each class, find{" "}
+        <b>Step 3:</b> For each class, find{" "}
         <b>
           <i>fX</i>
         </b>{" "}
@@ -140,7 +140,7 @@ function Solution({ info }) {
                 <i>X</i>
               </b>
             </th>
-            <th style={{ backgroundColor: "pink" }}>
+            <th style={{ backgroundColor: "lightgreen" }}>
               <b>
                 <i>fX</i>
               </b>
@@ -156,7 +156,7 @@ function Solution({ info }) {
               </td>
               <td>{row.frequency}</td>
               <td>{row.classMark}</td>
-              <td style={{ backgroundColor: "pink" }}>{row.fx}</td>
+              <td style={{ backgroundColor: "lightgreen" }}>{row.fx}</td>
             </tr>
           ))}
           <tr>
@@ -190,14 +190,11 @@ function Solution({ info }) {
 
       {/* Step 4 */}
       <p>
-        <b>Step 3️⃣:</b> Compute for{" "}
+        <b>Step 4:</b> Compute for{" "}
         <i>
           <b>ΣfX</b>
         </i>
         .
-      </p>
-      <p>
-        <i>(Note: The Σ symbol can be read as "summation of ".)</i>
       </p>
       <Table
         striped
@@ -246,18 +243,39 @@ function Solution({ info }) {
                 {info.sampleSize}
               </b>
             </td>
-            <td style={{ textAlign: "right", backgroundColor: "pink" }}>
-              <i>
-                <b>ΣfX=</b>
-              </i>
-            </td>
-            <td style={{ backgroundColor: "pink" }}>
-              <b>{info.sumOfFx}</b>
+            <td></td>
+            <td style={{ backgroundColor: "lightgreen" }}>
+              <b>
+                <i>ΣfX=</i>
+                {info.sumOfFx}
+              </b>
             </td>
           </tr>
         </tbody>
       </Table>
       <br />
+
+      {/* Step 5 */}
+      <p>
+        <b>Step 5: </b>Compute for the mean of the grouped data by dividing{" "}
+        <b>
+          <i>ΣfX</i>
+        </b>{" "}
+        by{" "}
+        <b>
+          <i>Σf</i>
+        </b>
+        , and rounding off the result up to 2 decimal places.
+      </p>
+      <br />
+      <p>
+        Mean of Grouped Data = <i>ΣfX</i> / <i>Σf</i> <br />= {info.sumOfFx} /{" "}
+        {info.sampleSize} <br />= {info.answer}{" "}
+        <b>
+          {" "}
+          <br />≈ {info.roundedAnswer}
+        </b>
+      </p>
     </div>
   );
 }

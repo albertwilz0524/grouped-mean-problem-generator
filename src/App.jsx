@@ -85,6 +85,20 @@ function App() {
         />
       )}
       {assessmentMode && !userIsCorrect && <Solution info={info} />}
+      {assessmentMode && (
+        <Button
+          variant="primary"
+          onClick={() => {
+            setInfo(generateMeanProblem());
+            setUserAnswer("");
+            setGradeLevel(randBetweenV1(7, 10));
+            setAssessmentMode(false);
+            setUserIsCorrect(false);
+          }}
+        >
+          Solve another problem!
+        </Button>
+      )}
     </Container>
   );
 }
